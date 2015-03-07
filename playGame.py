@@ -13,7 +13,10 @@ while not gameBoard.gameOver():
     #X's turn
     notMovedYetX = True
     while notMovedYetX:
-        move = int(input("X, Make a move! 1-9 "))
+        try:
+            move = int(input("X, Make a move! 1-9 "))
+        except:
+            move = 0
         if gameBoard.tryMove(move):
             gameBoard.board[move] = 'X'
             notMovedYetX = False
@@ -33,7 +36,10 @@ while not gameBoard.gameOver():
     #O's turn
     notMovedYetO = True
     while notMovedYetO:
-        move = int(input("O, Make a move! 1-9 "))
+        try:
+            move = int(input("O, Make a move! 1-9 "))
+        except:
+            move = 0
         if gameBoard.tryMove(move):
             gameBoard.board[move] = 'O'
             notMovedYetO = False
