@@ -1,3 +1,4 @@
+import random
 
 #this defines a class with all the methods we need for the 
 #tic tac toe game
@@ -69,6 +70,15 @@ class Board:
             return False
         else:
             return True
+
+    def computerMove(self):
+        emptyKeys = []
+        for key in self.board.keys():
+            if self.board[key] == " ":
+               emptyKeys.append(key)
+        return random.choice(emptyKeys)
+
+
 
 
         
